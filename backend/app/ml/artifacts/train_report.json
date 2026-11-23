@@ -1,0 +1,140 @@
+{
+  "timestamp": "2026-11-23 07:47:28.937124",
+  "datasets": {
+    "real": {
+      "ai4i_counts": {
+        "presses": 3,
+        "tires": 100,
+        "molds": 30,
+        "cure_cycles": 1000,
+        "quality_tests": 1000,
+        "predictions": 1000
+      },
+      "secom_shape": [
+        1567,
+        590
+      ],
+      "secom_pass_rate": 0.06636885768985322
+    },
+    "synthetic": {
+      "presses": 15,
+      "compounds": 3,
+      "tires": 100,
+      "molds": 30,
+      "cure_cycles": 2000,
+      "sensor_readings": 20000,
+      "quality_tests": 300,
+      "predictions": 2000,
+      "users": 1
+    }
+  },
+  "models": {
+    "quality_real": {
+      "source": "real",
+      "n_samples": 1000,
+      "n_features": 7,
+      "positive_rate": 0.977,
+      "train_metrics": {
+        "accuracy": 0.9912,
+        "precision": 0.9911,
+        "recall": 1.0,
+        "f1": 0.9955,
+        "auc": 0.9977
+      },
+      "test_metrics": {
+        "accuracy": 0.975,
+        "precision": 0.9798,
+        "recall": 0.9949,
+        "f1": 0.9873,
+        "auc": 0.9785
+      }
+    },
+    "anomaly_real": {
+      "source": "real",
+      "n_samples": 1000,
+      "mean_anomaly_score": 0.4552,
+      "max_anomaly_score": 0.7565,
+      "anomaly_rate": 0.05
+    },
+    "energy_real": {
+      "source": "real",
+      "r2": 1.0,
+      "mape": 0.0,
+      "n_samples": 1000
+    },
+    "physics_real": {
+      "source": "real",
+      "final_cure_degree": 0.9904,
+      "time_to_target_min": 14.32,
+      "mape_vs_stored": 0.1529,
+      "n_evaluated": 100
+    },
+    "quality_synthetic": {
+      "source": "synthetic",
+      "n_samples": 2000,
+      "n_features": 7,
+      "positive_rate": 0.2955,
+      "train_metrics": {
+        "accuracy": 0.9906,
+        "precision": 0.9893,
+        "recall": 0.9789,
+        "f1": 0.9841,
+        "auc": 0.9997
+      },
+      "test_metrics": {
+        "accuracy": 0.925,
+        "precision": 0.8667,
+        "recall": 0.8814,
+        "f1": 0.8739,
+        "auc": 0.9802
+      }
+    },
+    "anomaly_synthetic": {
+      "source": "synthetic",
+      "n_samples": 2000,
+      "mean_anomaly_score": 0.5058,
+      "max_anomaly_score": 0.6172,
+      "anomaly_rate": 0.05
+    },
+    "energy_synthetic": {
+      "source": "synthetic",
+      "r2": 0.8431,
+      "mape": 0.0466,
+      "n_samples": 2000
+    },
+    "physics_synthetic": {
+      "source": "synthetic",
+      "final_cure_degree": 0.9904,
+      "time_to_target_min": 14.32,
+      "mape_vs_stored": 0.4597,
+      "n_evaluated": 100
+    },
+    "quality_secom": {
+      "source": "real_secom",
+      "n_samples": 1567,
+      "n_features": 7,
+      "positive_rate": 0.06636885768985322,
+      "train_metrics": {
+        "accuracy": 0.9649,
+        "precision": 1.0,
+        "recall": 0.4712,
+        "f1": 0.6405,
+        "auc": 0.9981
+      }
+    }
+  },
+  "optimizer_demo_real": {
+    "optimal_time_min": 42.95,
+    "predicted_cure_degree": 0.9904,
+    "predicted_quality_prob": 0.0599,
+    "predicted_energy_kwh": 55.0,
+    "savings_vs_baseline_pct": -95.23
+  },
+  "optimizer_demo_synthetic": {
+    "optimal_time_min": 42.95,
+    "predicted_cure_degree": 0.9904,
+    "predicted_quality_prob": 0.0015,
+    "predicted_energy_kwh": 55.0,
+    "savings_vs_baseline_pct": -95.23
+  }
+}
